@@ -38,7 +38,7 @@ public class Echtuin implements Penguin {
 	}
 
 	private String computeSum(String sum) {
-		if (sum.matches("^\\d+( \\+ \\d+)*$")) {
+		if (sum.matches("^(-)?\\d+( \\+ (-)?\\d+)*$")) {
 			try {
 				final List<Long> summands = Arrays.stream(sum.split(" \\+ "))
 						.mapToLong(Long::parseLong)

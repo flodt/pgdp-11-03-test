@@ -3,14 +3,16 @@ package pgdp.test.discuss;
 import java.io.IOException;
 
 /**
- * Version 1.0
+ * Version 1.1
+ * 1.1: fixed pattern in sum for negative ints
  * -----------
  * @author Florian Schmidt (ge75vob)
- * 		   fs.schmidt@tum.de
+ * fs.schmidt@tum.de
  */
 public class DiscussionHandler {
 	/**
 	 * Starts the server with a new discussion.
+	 *
 	 * @param args true / false, specifies whether Echtuin (true) or Falschuin (false)
 	 * @throws IOException when errors occur with socket initialization
 	 */
