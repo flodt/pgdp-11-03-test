@@ -38,7 +38,7 @@ public class Falschuin implements Penguin {
 	}
 
 	private String computeSum(String sum) {
-		if (sum.matches("^(-)?\\d+( \\+ (-)?\\d+)*$")) {
+		if (sum.matches("^(-|\\+)?+\\d++( \\+ (-|\\+)?+\\d++)*+$")) {
 			try {
 				final List<Long> summands = Arrays.stream(sum.split(" \\+ "))
 						.mapToLong(Long::parseLong)
@@ -46,14 +46,7 @@ public class Falschuin implements Penguin {
 						.collect(Collectors.toList());
 
 				//check for int range
-				if (summands.size()
-						==
-						summands.stream().filter(l -> (l >= Integer.MIN_VALUE) && (l <= Integer.MAX_VALUE)).count()) {
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					} //sleep here
+				if (summands.stream().allMatch(l -> (l >= Integer.MIN_VALUE) && (l <= Integer.MAX_VALUE))) {
 					return Long.toString(summands.stream().mapToLong(Long::longValue).sum() + 12);
 				} else {
 					return SUM_DENY;

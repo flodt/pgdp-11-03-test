@@ -3,8 +3,9 @@ package pgdp.test.discuss;
 import java.io.IOException;
 
 /**
- * Version 1.1
+ * Version 1.2
  * 1.1: fixed pattern in sum for negative ints
+ * 1.2: fixed regex with possessive quantifiers
  * -----------
  * @author Florian Schmidt (ge75vob)
  * fs.schmidt@tum.de
